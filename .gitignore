@@ -55,3 +55,12 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# ipython notebook
+*.ipynb
+.ipynb_checkpoints
+
+# local dev
+couchbase_views
+*.sqlite3
+
