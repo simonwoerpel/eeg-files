@@ -61,6 +61,7 @@ target/
 .ipynb_checkpoints
 
 # local dev
+local_settings.py
 couchbase_views
 *.sqlite3
 
