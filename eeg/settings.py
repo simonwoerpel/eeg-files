@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = None  # local settings
+# SECRET_KEY = None  # local settings
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'theme',
 
+    'app',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +45,7 @@ INSTALLED_APPS = (
     'django_extensions',
 
     'couchbase_views',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -117,8 +120,8 @@ COUCHBASE = {
 
 
 # local settings
-try:
-    from local_settings import *
-except ImportError:
-    pass
+# try:
+from eeg.local_settings import *
+# except ImportError:
+#     pass
 
