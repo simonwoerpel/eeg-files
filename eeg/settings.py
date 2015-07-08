@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'django_extensions',
 
     'couchbase_views',
+    'elastic_views',
 
 )
 
@@ -94,9 +95,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'de'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 
@@ -116,6 +117,11 @@ COUCHBASE = {
     'BUCKET': 'eeg',
     'PASSWORD': 'eeg',
     'HOST': 'localhost',
+}
+
+# elastic_views
+ELASTICSEARCH = {
+    'DEFAULT_INDEX': 'cb-eeg',
 }
 
 

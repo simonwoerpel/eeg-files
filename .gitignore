@@ -63,5 +63,7 @@ target/
 # local dev
 local_settings.py
 couchbase_views
+elastic_views
 *.sqlite3
+venv
 
