@@ -67,3 +67,5 @@ elastic_views
 *.sqlite3
 venv
 
+build.js*
+node_modules

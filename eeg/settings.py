@@ -46,7 +46,7 @@ INSTALLED_APPS = (
 
     'rest_framework',
 
-    'couchbase_views',
+    # 'couchbase_views',
     'elastic_views',
 
 )
