@@ -44,6 +44,8 @@ INSTALLED_APPS = (
 
     'django_extensions',
 
+    'rest_framework',
+
     'couchbase_views',
     'elastic_views',
 
