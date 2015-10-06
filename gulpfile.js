@@ -14,7 +14,7 @@ var babel = require('babelify');
 
 // var CSS_SOURCE = 'theme/less';
 // var CSS_DEST = 'theme/static/css';
-var JS_SOURCE = 'app/js';
+var JS_SOURCE = 'app/jsx';
 var JS_DEST = 'app/static/js';
 // var MAIN_LESS_FILE = '/main.less';
 // var MAIN_JS_FILE = '/main.js';
