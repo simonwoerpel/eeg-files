@@ -6,6 +6,7 @@ from elasticsearch_dsl import Search
 
 
 INDEX = settings.ELASTICSEARCH['DEFAULT_INDEX']
+POWERKWH = settings.EEG_APP['DEFAULT_POWERKWH_FIELD']
 
 
 def test(request):
@@ -20,7 +21,7 @@ class Dso(object):
         s = Search(index=INDEX).query('match', dso=self.name)
         s.aggs.metric('plant_count', 'cardinality', field='id')
         s.aggs.metric('carrier_count', 'cardinality', field='carrier')
-        s.aggs.metric('power_sum', 'sum', field='power_kwp_el')
+        s.aggs.metric('power_sum', 'sum', field=POWERKWH)
         e = s.execute()
         return e
 
@@ -48,15 +49,15 @@ def local_search(request):
         s = Search(index=INDEX).query('match', plz=plz)
 
     s.aggs.bucket('per_carrier', 'terms', field='carrier')\
-        .metric('power_avg', 'avg', field='power_kwp_el')\
-        .metric('power_sum', 'sum', field='power_kwp_el')
+        .metric('power_avg', 'avg', field=POWERKWH)\
+        .metric('power_sum', 'sum', field=POWERKWH)
     s.aggs.bucket('per_dso', 'terms', field='dso')\
-        .metric('power_avg', 'avg', field='power_kwp_el')\
-        .metric('power_sum', 'sum', field='power_kwp_el')
+        .metric('power_avg', 'avg', field=POWERKWH)\
+        .metric('power_sum', 'sum', field=POWERKWH)
     s.aggs.metric('plant_count', 'cardinality', field='id')
     s.aggs.metric('dso_count', 'cardinality', field='dso')
     s.aggs.metric('carrier_count', 'cardinality', field='carrier')
-    s.aggs.metric('power_sum', 'sum', field='power_kwp_el')
+    s.aggs.metric('power_sum', 'sum', field=POWERKWH)
 
     e = s.execute()
 

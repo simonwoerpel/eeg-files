@@ -109,6 +109,10 @@ ELASTICSEARCH = {
     'DEFAULT_INDEX': 'eeg-test',
 }
 
+EEG_APP = {
+    'DEFAULT_POWERKWH_FIELD': 'power_kwh',
+}
+
 from elasticsearch_dsl.connections import connections
 connections.create_connection(hosts=['localhost'])
 
