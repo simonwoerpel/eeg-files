@@ -1,7 +1,18 @@
+'use strict';
+
 import React from 'react';
+import SimpleLocalSearchResultWrapper from './simple_local_search/components';
 
-React.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('helloworld')
-);
+class EegApp extends React.Component {
 
+  render() {
+
+    return (
+      <SimpleLocalSearchResultWrapper />
+    );
+
+  }
+
+}
+
+export default EegApp;

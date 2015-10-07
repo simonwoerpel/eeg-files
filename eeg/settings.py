@@ -41,10 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django_extensions',
-
-    # 'couchbase_views',
-    'elastic_views',
-
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,23 +105,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-# couchbase_views
-COUCHBASE = {
-    'BUCKET': 'eeg',
-    'PASSWORD': 'eeg',
-    'HOST': 'localhost',
-}
-
-# elastic_views
 ELASTICSEARCH = {
-    'DEFAULT_INDEX': 'cb-eeg',
+    'DEFAULT_INDEX': 'eeg-test',
 }
 
+from elasticsearch_dsl.connections import connections
+connections.create_connection(hosts=['localhost'])
 
-# local settings
-# try:
 from eeg.local_settings import *
-# except ImportError:
-#     pass
-

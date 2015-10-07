@@ -1,8 +1,35 @@
 {% load static %}
 
-<html>
-  <body>
-<div id="helloworld"></div>
-<script src="{% static 'js/build.js' %}"></script>
-</body>
+<html lang="de">
+    <head>
+        <title>Datenwende</title>
+        <meta charset="utf-8" />
+        <!--[if lte IE 8]><script src="{%static 'js/html5shiv.js' %}"></script><![endif]-->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/skel.min.js' %}"></script>
+        <script src="{% static 'js/init.js' %}"></script>
+    </head>
+
+    <body id="top" class="eeg">
+        <header class="eeg__header" id="header">
+            <h1><a href="/">Datenwende <strong></strong></a></h1>
+        </header>
+        <section id="banner">
+            <h2>Datenwende</h2>
+            <h3>Explore your neighbourhood</h3>
+        </section>
+        <section class="container eeg__container">
+            <section id="eeg__app">
+            </section><!-- /#content -->
+        </section>
+        <footer id="footer" class="eeg__footer">
+            <section class="container eeg__footer__container">
+                <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+            </section>
+        </footer>
+        <script src="{% static 'js/build.js' %}"></script>
+    </body>
 </html>

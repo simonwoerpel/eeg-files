@@ -17,7 +17,7 @@ var babel = require('babelify');
 var JS_SOURCE = 'app/jsx';
 var JS_DEST = 'app/static/js';
 // var MAIN_LESS_FILE = '/main.less';
-// var MAIN_JS_FILE = '/main.js';
+var MAIN_JS_FILE = '/main.js';
 
 // https://gist.github.com/danharper/3ca2273125f500429945
 function compileJS(watch) {
